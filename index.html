@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="click on Shalaby , click on 2319" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" />
+    <title>Weather App</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <!-- ########## NavBar ########## -->
+    <nav class="navbar navbar-expand-lg py-5" id="weatherNav">
+      <div class="container">
+        <a class="logo navbar-brand d-flex align-items-center gap-2" href="#">
+          <div class="logo-img text-end bg-dark">
+            <img class="w-100" src="imgs/logo@2x.png" alt="logo" />
+          </div>
+          <div class="logo-content text-white">
+            <h1 class="m-0 mb-1 fs-6 fw-bold">Weather</h1>
+            <p class="m-0">tagline goes here</p>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler menu-btn"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span>
+            <i class="fa-solid fa-bars"></i>
+          </span>
+        </button>
+        <div
+          class="list-box collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#camera">Live cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#photo">Photo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ########## Home Section ########## -->
+    <section class="home py-5" id="home">
+      <div class="container">
+        <div
+          class="mb-3 py-5 d-flex position-relative align-items-center inputs-box"
+        >
+          <input
+            type="text"
+            class="form-control location-input border-0"
+            placeholder="Find your location"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+            id="findInput"
+          />
+          <button
+            class="btn find-btn text-black position-absolute"
+            type="button"
+            id="findBtn"
+          >
+            Find
+          </button>
+        </div>
+        <div class="row weather-details gx-0">
+          <div class="col-lg-4 col-12 cont">
+            <div class="box" id="todayWeather">
+              <!-- <div class="header d-flex justify-content-between">
+                <span class="day">
+                  Saturday
+                </span>
+                <span class="date">
+                  7 December
+                </span>
+              </div>
+              <div class="body py-4">
+                <h3 class="location fs-5 px-3">Cairo</h3>
+                <p class="weather-degree display-1 text-white fw-bold px-4 ">20.3<sup>o</sup>C</p>
+                <div class="img-box">
+                  <img class="w-25" src="imgs/113.webp" alt="hilal">
+                </div>
+                <div class="status px-3 mb-2">Clear</div>
+                <div class="more-details px-3 my-3 d-flex justify-content-between w-75">
+                  <span>
+                    <i class="fa-solid fa-umbrella"></i>
+                    20%
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-wind"></i>
+                    18km/h
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-compass"></i>
+                    East
+                  </span>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 cont cont-center">
+            <div class="box" id="tomorrowWeather">
+              <!-- <div class="header d-flex justify-content-center">
+                <span class="day">
+                  Sunday
+                </span>
+              </div>
+              <div class="body py-4 text-center">
+                <div class="img-box">
+                  <img class="" src="imgs/113 (1).webp" alt="hilal">
+                </div>
+                <p class="weather-degree text-white fw-bold px-4 fs-4 mb-0 mt-2">22.5<sup>o</sup>C</p>
+                <p class="weather-degree fw-bold px-4 fw-light">14.8<sup>o</sup></p>
+                <div class="status px-3 mb-2">Sunny</div>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 cont">
+            <div class="box" id="afterTomorrowWeather">
+              <!-- <div class="header d-flex justify-content-center">
+                <span class="day">
+                  Monday
+                </span>
+              </div>
+              <div class="body py-4 text-center">
+                <div class="img-box">
+                  <img class="" src="imgs/113 (1).webp" alt="hilal">
+                </div>
+                <p class="weather-degree text-white fw-bold px-4 fs-4 mb-0 mt-2">22.9<sup>o</sup>C</p>
+                <p class="weather-degree fw-bold px-4 fw-light">13.9<sup>o</sup></p>
+                <div class="status px-3 mb-2">Sunny</div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ########## Contact Section ########## -->
+    <section class="contact d-none" id="contact">
+      <div class="container">
+        <div class="header">
+          <p class="text-white">
+            <a class="text-decoration-none" href="#home">
+              Home
+              <i class="ms-2 fa-solid fa-arrow-right-long align-middle"></i>
+            </a>
+            <span class="current-page ms-2">Contact</span>
+          </p>
+        </div>
+        <div class="body py-5">
+          <div class="row gy-5 px-4">
+            <div class="col-lg-5 col-12 rounded-3 info h-75 bg-img">
+              <div class="box text-white fw-bold">
+                <div class="empty"></div>
+                <div class="details-box fs-14 py-3">
+                  <div class="company-location d-flex">
+                    <i class="fa-solid fa-location-dot me-2"></i>
+                    <div class="company-name color">
+                      <p class="mb-0">Monsters INC.</p>
+                      <p>22 Wasowski Street, Monsters City.</p>
+                    </div>
+                  </div>
+                  <div class="company-contact-info d-flex gap-4 flex-wrap">
+                    <div class="phone">
+                      <i class="fa-solid fa-phone me-2"></i>
+                      <span
+                        ><a class="text-decoration-none color" href="#" id="tel"
+                          >2319</a
+                        ></span
+                      >
+                    </div>
+                    <div class="mail">
+                      <i class="fa-solid fa-envelope me-2"></i>
+                      <span
+                        ><a
+                          class="text-decoration-none color"
+                          href="mailto:mike.wazowski@gmail.com"
+                          >mike.wazowski@gmail.com</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 ms-lg-auto">
+              <div class="box px-5">
+                <h2 class="text-white mb-3">Contact Us</h2>
+                <p class="text-white fs-14 fw-light">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Commodi consectetur inventore ducimus, facilis, numquam id
+                  soluta omnis eius recusandae nesciunt vero repellat harum cum.
+                  Nisi facilis odit hic, ipsum sed!
+                </p>
+                <div class="form">
+                  <div class="row g-3">
+                    <div class="col-lg-6 col-12">
+                      <input
+                        type="text"
+                        class="input form-control location-input bg-transparent fs-14 mb-3"
+                        placeholder="Your name..."
+                      />
+                      <input
+                        type="text"
+                        class="input form-control location-input bg-transparent fs-14"
+                        placeholder="Company name..."
+                      />
+                    </div>
+                    <div class="col-lg-6 col-12">
+                      <input
+                        type="email"
+                        class="input form-control location-input bg-transparent fs-14 mb-3"
+                        placeholder="Email Address..."
+                      />
+                      <input
+                        type="text"
+                        class="input form-control location-input bg-transparent fs-14"
+                        placeholder="Website..."
+                      />
+                    </div>
+                    <div class="col-12">
+                      <textarea
+                        class="w-100 location-input bg-transparent fs-14 input form-control rounded-5"
+                        rows="5"
+                        name=""
+                        id=""
+                        placeholder="Message"
+                      ></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                      <button class="btn find-btn text-black py-2 px-3">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio id="playAudio">
+        <source class="d-none" src="audio/اصحي يا شلبي.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="playAudioEng">
+        <source
+          class="d-none"
+          src="audio/-we-have-a-2319!.mp3"
+          type="audio/mp3"
+        />
+      </audio>
+    </section>
+    <!-- ########## Footer ########## -->
+    <footer class="py-4">
+      <div class="container">
+        <div
+          class="d-flex align-items-center justify-content-between flex-lg-row flex-column"
+        >
+          <div
+            class="w-75 d-flex position-relative align-items-center inputs-box"
+          >
+            <input
+              type="text"
+              class="form-control location-input border-0"
+              placeholder="Enter your email to subscribe..."
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              id="findInput"
+            />
+            <button
+              class="btn find-btn text-black position-absolute"
+              type="button"
+              id="findBtn"
+            >
+              Subscribe
+            </button>
+          </div>
+          <div
+            class="social-icons d-flex gap-1 align-items-center mt-lg-0 mt-3 me-lg-auto flex-grow-1 justify-content-center"
+          >
+            <a class="small-circle" href="#" aria-label="facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a class="small-circle" href="#" aria-label="x-twitter"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a class="small-circle" href="#" aria-label="google-plus"
+              ><i class="fa-brands fa-google-plus-g"></i
+            ></a>
+            <a class="small-circle" href="#" aria-label="pinterest"
+              ><i class="fa-brands fa-pinterest"></i
+            ></a>
+          </div>
+        </div>
+        <p class="copyright my-5">
+          Copyright 2001 Monsters Inc. Designed by Mike Wasowski. All rights
+          reserved
+        </p>
+      </div>
+    </footer>
+
+    <!-- Loading -->
+    <div class="loading d-none" id="loading">
+      <span class="loader"></span>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--  -->
+    <script
+      nonce="random123"
+      src="https://api.weatherapi.com/v1/forecast.json"
+    ></script>
+    <!-- Main JS -->
+    <script src="js/index.min.js"></script>
+  </body>
+</html>
